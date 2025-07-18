@@ -161,7 +161,7 @@
     }
 
     function updateScoreboard() {
-      scoreboard.textContent = ${names.X}: ${scores.X} | ${names.O}: ${scores.O};
+      scoreboard.textContent = `${names.X}: ${scores.X} | ${names.O}: ${scores.O}`;
     }
 
     function checkWinner() {
@@ -179,7 +179,7 @@
           cells[a].textContent === cells[c].textContent
         ) {
           gameActive = false;
-          statusText.textContent = 🎉 ${names[cells[a].textContent]} wins!;
+          statusText.textContent = `🎉 ${names[cells[a].textContent]} wins!`;
           emoji.textContent = "🏆🎊";
           winSound.play();
           scores[cells[a].textContent]++;
@@ -208,7 +208,7 @@
       checkWinner();
       if (gameActive) {
         currentPlayer = currentPlayer === "X" ? "O" : "X";
-        statusText.textContent = ${names[currentPlayer]}'s turn;
+        statusText.textContent = `${names[currentPlayer]}'s turn`;
         emoji.textContent = "";
       }
     }
@@ -228,7 +228,7 @@
       currentPlayer = "X";
       gameActive = true;
       emoji.textContent = "";
-      statusText.textContent = ${names[currentPlayer]}'s turn;
+      statusText.textContent = `${names[currentPlayer]}'s turn`;
       createBoard();
     }
 
